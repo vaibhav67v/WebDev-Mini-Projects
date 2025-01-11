@@ -16,6 +16,8 @@ body {
     background-color: rgb(40, 40, 40);
     width: 22vw;
     border-radius: 1em;
+    /* positioning relative for animated border */
+    position: relative;
 }
 
 .container {
@@ -28,6 +30,42 @@ body {
     border-radius: 1em;
     margin: 0.3em;
     font-family: "Baloo 2", serif;
+}
+
+/* creating animated border */
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.container-box::after, .container-box::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), #ff9900, #15ff00, #00ffd5, #ff9900);
+    background-image: conic-gradient(from var(--angle), transparent, #ff9900, #15ff00, #00ffd5);
+    border-radius: 1em;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 0.1em;
+    animation: 6s spin linear infinite;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg 
+    } to {
+        --angle: 360deg
+    }
+}
+
+.container-box::before {
+    filter: blur(0.5rem);
+    opacity: 0.7;
 }
 
 img {
