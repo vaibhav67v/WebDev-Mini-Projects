@@ -1,0 +1,95 @@
+*, *::before, *::after {
+    font-family: "Open Sans", serif;
+}
+
+:root {
+    --btn-color: hsl(200, 50%, 50%);
+    --btn-color-light: hsl(200, 50%, 65%);
+    --btn-color-light-bg: hsl(200, 50%, 90%);
+    --card-shadow-color: rgba(0, 0, 0, 0.3);
+    --card-background: white;
+    --background: cyan;
+    --padding: 1rem
+}
+body {
+    display: flex;
+    justify-content: center;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(240,139,139,1) 0%, rgba(243,252,166,1) 90% );     
+}
+.grid-container {
+    max-width: 70vw;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    align-items: start;
+    /* max-width: 60vw; */
+}
+
+.card {
+    background: var(--card-background);
+    border:none;
+    box-shadow: 0 2px 5px 0 var(--card-shadow-color);
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.card-header {
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.card-header > img {
+    display: block; /* to set the height or width to the image */
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    max-height: 220px;
+    object-position: center;
+    transition: 200ms transform ease-in-out;
+}
+
+.card:hover > .card-header > img {
+    transform: scale(1.025);
+}
+
+.card-body {
+    padding: 0 var(--padding);
+    font-size: 0.9rem;
+}
+
+.card-footer {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    padding: var(--padding);
+    padding-top: 0;
+}
+
+.btn {
+    color: white;
+    background: var(--btn-color);
+    border: none;
+    padding: .5em .7em; /* we actually want to change the padding according to the font size of the card */
+    cursor: pointer;
+    border-radius: 0.25em;
+}
+
+.btn:hover, .btn:focus {
+    background: var(--btn-color-light);
+}
+
+.btn.btn-outline {
+    background: none;
+    border: 1px solid var(--btn-color);
+    color: var(--btn-color)
+}
+
+.btn.btn-outline:hover, .btn.btn-outline:focus {
+    background: var(--btn-color-light-bg)
+}
+
+.btn + .btn {
+    margin-left: 0.25rem;
+}
