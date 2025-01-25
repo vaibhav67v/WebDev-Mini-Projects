@@ -1,0 +1,65 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.8));
+}
+
+.avatar {
+    --size: 220px;
+    height: var(--size);
+    width: var(--size);
+    border-radius: 50%;
+    /* background-image: url(dog.jpg); */
+    background-image: url('dog.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.avatar::before,
+.avatar::after {
+    --scale:0; /* set default scale value to zero unless the image is hovered */
+    --tooltip-color: #181818;
+    --arrow-size: 8px;
+
+    position: absolute;
+    top: -.25rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+    transition: 150ms transform;
+    transform-origin: bottom center;
+}
+
+.avatar::before {
+    --translate-y: calc(-100% - var(--arrow-size));
+
+    content: attr(data-tooltip);
+    background: var(--tooltip-color);
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: .5rem;
+    border-radius: .3rem;
+    width: max-content; /* sets the width so that maximum content can be shown */
+    max-width: 100%; /* if there will be long text, it will get wrapped after the image size */
+}
+
+.avatar::after {
+    --translate-y: calc(-1*var(--arrow-size));
+    transform-origin: top center;
+    content: '';
+    border: var(--arrow-size) solid transparent;
+    border-top-color: var(--tooltip-color);
+}
+
+.avatar:hover::before,
+.avatar:hover::after {
+    --scale:1;
+}
