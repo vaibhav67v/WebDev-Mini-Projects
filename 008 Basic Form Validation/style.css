@@ -1,0 +1,62 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(88, 87, 87);
+    height: 100vh;
+}
+
+.error-message {
+    color:white;
+    font-size: 1.3em;
+    margin-top: 1em;
+    width: 60vw;
+    text-align: center;
+}
+
+.form-container {
+    color: white;
+    font-weight: bold;
+    background-color: rgb(59, 176, 226);
+    border: solid rgb(69, 68, 68);
+    border-radius: 1.3em;
+    box-shadow: 0 0 5px 2px rgb(101, 252, 247);
+    padding: 1.3em;
+    width: 60vw;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container form input {
+    padding: 0.3em;
+    border-radius: 0.5em;
+}
+
+.form-container form div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+button {
+    width: 5em;
+    padding: 0.4em;
+    border-radius: 0.5em;
+    border: none;
+}
+
+button:hover{
+    background-color: rgb(226, 226, 226);
+}
