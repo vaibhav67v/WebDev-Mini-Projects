@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Focus On Today</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="title">Focus On <span id="today">Today</span></div>
+        <div class="main-container">
+            <div class="today-heading-container">
+                <h3>Today</h3>
+                <img src="Images/Sun.png" alt="suraj ka icon" />
+            </div>
+
+            <div class="message">Raise the bar by completing your goals!</div>
+
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+
+            <div class="warning-message">
+                Please set all the 3 goals!
+            </div>
+
+            <form class="task-container" action="/" method="get">
+                <div class="task">
+                    <input type="checkbox" id="check1" class="complete-checkbox"/>
+                    <label for="check1" class="complete-label"></label>
+                    <input type="text" name="task1" id="task1" placeholder="Add new goal..."/>
+                </div>
+
+                <div class="task">
+                    <input type="checkbox" id="check2" class="complete-checkbox"/>
+                    <label for="check2" class="complete-label"></label>
+                    <input type="text" name="task2" id="task2" placeholder="Add new goal..."/>
+                </div>
+
+                <div class="task">
+                    <input type="checkbox" id="check3" class="complete-checkbox"/>
+                    <label for="check3" class="complete-label"></label>
+                    <input type="text" name="task3" id="task3" placeholder="Add new goal..."/>
+                </div>
+            </form>
+
+            <div class="message-2">
+                <div class="punchline">“Move one step ahead, today!”</div>
+                <div class="author-message">Made with ❤️ by Vaibhav</div>
+            </div>
+        </div>
+    </body>
+</html>
